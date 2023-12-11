@@ -8,28 +8,6 @@
     <link href="https://fonts.googleapis.com/css?family=Sawarabi+Mincho" rel="stylesheet">
     <link href="style.css" rel="stylesheet">
     <title>コーポレートLP</title>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-    <script type="text/javascript">
-        (function() {
-            emailjs.init('8LkZ4MUpmuHhwijuN');
-        })();
-    </script>
-    <script type="text/javascript">
-        window.onload = function() {
-            document.getElementById('contact-form').addEventListener('submit', function(event) {
-                event.preventDefault();
-                this.contact_number.value = Math.random() * 100000 | 0;
-                emailjs.sendForm('service_90ewhbi', 'template_2c3lili', this)
-                    .then(function() {
-                        window.alert('送信に成功しました');
-                        console.log('SUCCESS');
-                    }, function(error) {
-                        window.alert('送信にし失敗しました');
-                        console.log('FAILED...', error);
-                    });
-            });
-        }
-    </script>
 </head>
 <body>
  <!-- header -->
@@ -137,4 +115,26 @@
      <p class="copyright">© 2023 Wcode Corporation.</p>
 </footer>
 </body>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            emailjs.init('8LkZ4MUpmuHhwijuN');
+        })();
+    </script>
+    <script type="text/javascript">
+        window.onload = function() {
+            document.getElementById('contact-form').addEventListener('submit', function(event) {
+                event.preventDefault();
+                this.contact_number.value = Math.random() * 100000 | 0;
+                emailjs.sendForm('service_90ewhbi', 'template_2c3lili', this)
+                    .then(function() {
+                        window.alert('送信に成功しました');
+                        console.log('SUCCESS');
+                    }, function(error) {
+                        window.alert('送信にし失敗しました');
+                        console.log('FAILED...', error);
+                    });
+            });
+        }
+    </script>
 </html>
