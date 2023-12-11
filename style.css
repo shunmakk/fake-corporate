@@ -61,6 +61,7 @@ body{
 }
 
 
+
 a{
     text-decoration: none;
 }
@@ -137,6 +138,10 @@ li{
     opacity: 0.5;  /* 透明度を0.5倍にする */
 }
 
+.icon{
+    width: 30px;
+}
+
 
 
 
@@ -168,16 +173,20 @@ li{
 
 /* mainの記載 */
 
-.main{
+/* mainの記載 */
+.main {
     margin-bottom: 80px;
+    overflow: hidden; /* 追加 */
 }
 
+.main picture {
+    margin: 0; /* 追加 */
+}
 
-.main picture img{
+.main picture img {
     width: 100%;
-    max-width: 1920px;
-    height: 400px;
-    object-fit: cover; /* 画像のトリミング */
+    height: auto; /* 追加 */
+    display: block; /* 追加 */
 }
 
 
@@ -307,6 +316,7 @@ li{
 
 .wrapperform{
     margin-bottom: 20px;
+    overflow: hidden;
 }
 
 Form {
@@ -453,9 +463,10 @@ Form {
   
   /* Footerの記載 */
 .footer{
-    max-width: 100%;
+    max-width: 1920px;
     background-color: #c8c8c8;
     height: 200px;
+    overflow: hidden;
 }
 
 
