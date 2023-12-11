@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="東京都練馬区所在のweb制作会社です。主に簡単なLPサイトやコーポレートサイトの制作を受けています。使用技術としましてはHTML,CSS ,Javascript ,jQuery、React ,PHP ,wordpressです。">
+    <link href="https://fonts.googleapis.com/css?family=Sawarabi+Mincho" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+    <title>コーポレートLP</title>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            emailjs.init('8LkZ4MUpmuHhwijuN');
+        })();
+    </script>
+    <script type="text/javascript">
+        window.onload = function() {
+            document.getElementById('contact-form').addEventListener('submit', function(event) {
+                event.preventDefault();
+                this.contact_number.value = Math.random() * 100000 | 0;
+                emailjs.sendForm('service_90ewhbi', 'template_2c3lili', this)
+                    .then(function() {
+                        window.alert('送信に成功しました');
+                        console.log('SUCCESS');
+                    }, function(error) {
+                        window.alert('送信にし失敗しました');
+                        console.log('FAILED...', error);
+                    });
+            });
+        }
+    </script>
+</head>
+<body>
+ <!-- header -->
+<header class="header"> 
+    <h1 class="site-title">
+        <a href="#">株式会社Wcode</a>
+    </h1>
+    <nav>
+      <ul>
+       <li><a href="#about">About</a></li>
+       <li><a href="#works">Works</a></li>
+       <li><a href="#news">News</a></li>
+       <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+</header>
+
+
+ <!-- main -->
+<div class="main">
+    <picture>
+        <source media="(max-width: 800px)" srcset="./img/cop1.jpg">
+        <img src="./img/cop1.jpg" alt="メイン写真" />
+    </picture>
+
+ <!-- about -->
+ <section id="about" class="wrapper">
+    <h2 class="sec-title">About</h2>
+    <ul>
+        <li>株式会社Wcode</li>
+        <li>20OO年にweb制作会社として設立</li>
+        <li>webサイト/LP制作・webアプリケーション開発</li>
+        <li>メールアドレス: Wcode2023@gmail.com</li>
+    </ul>
+    <p>主に簡単なLPサイトやコーポレートサイトの制作を得意としています。また、ReactやPHPを使用したwebアプリケーションの開発も得意としています。</p>
+ </section>
+
+<!-- works -->
+<section id="works" class="wrapper">
+    <h2 class="sec-title">Works</h2>
+    <ul>
+       
+        <li> <p>スマートフォンアプリの開発</p><img src="img/works1.jpg" alt="works1"/></li>
+        <li><p>コーポレイトサイトの制作</p><img src="img/works2.jpg" alt="works2"/></li>
+        <li> <p>SEOコンサルティング</p><img src="img/works3.jpg" alt="works3"/></li>
+        <li> <p>フリーランス紹介</p><img src="img/works4.jpg" alt="works4"/></li>
+        <li> <p>AWSの環境構築のお手伝い</p><img src="img/works5.jpg" alt="works5"/></li>
+        <li> <p>webアプリケーションの構築</p><img src="img/works6.jpg" alt="works6"/></li>
+    </ul>
+</section>
+
+
+<!-- news -->
+<section id="news" class="wrapper">
+    <h2 class="sec-title">News</h2>
+    <dl>
+
+    <dt>2023/9/7</dt>
+    <dd>本サイトをリリースしました。</dd>
+    <dt>2023/9/30</dt>
+    <dd>お仕事のお依頼はこちらから</dd>
+    <dt>2023/11/01</dt>
+    <dd>web制作コンサルを始めます</dd>
+    <dt>2024/01/22</dt>
+    <dd>自社開発アプリケーションについて</dd>
+    <dt>2024/02/11</dt>
+    <dd>会社休業のお知らせ</dd>
+    </dl>
+</section>
+
+<!-- form -->
+<section id="contact" class="wrapper wrapperform">
+    <h2 class="sec-title">Contact</h2>
+    <Form class="Form" id="contact-form">
+        <div class="Form-Item">
+          <p class="Form-Item-Label"><span class="Form-Item-Label-Required">必須</span>氏名</p>
+          <input type="text" id="name" name="user_name" class="Form-Item-Input" placeholder="例）山田太郎">
+        </div>
+        <div class="Form-Item">
+          <p class="Form-Item-Label"><span class="Form-Item-Label-Required">任意</span>電話番号</p>
+          <input type="text" id="number" name="contact_number" class="Form-Item-Input" placeholder="例）000-0000-0000">
+        </div>
+        <div class="Form-Item">
+          <p class="Form-Item-Label"><span class="Form-Item-Label-Required">任意</span>メールアドレス</p>
+          <input type="email" id="email" name="user_email" class="Form-Item-Input" placeholder="例）example@gmail.com">
+        </div>
+        <div class="Form-Item">
+          <p class="Form-Item-Label isMsg"><span class="Form-Item-Label-Required">必須</span>お問い合わせ内容</p>
+          <textarea name="message" id="about" class="Form-Item-Textarea"></textarea>
+        </div>
+        <button type="submit" class="Form-Btn" value="Send">送信する</button>
+      </Form>
+</section>
+</div>
+
+<footer  class="footer">
+    <nav class="footernav">
+        <ul>
+         <li><a href="#about">About</a></li>
+         <li><a href="#works">Works</a></li>
+         <li><a href="#news">News</a></li>
+         <li><a href="#contact">Contact</a></li>
+         </ul>
+      </nav>
+     <p class="copyright">© 2023 Wcode Corporation.</p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,474 @@
+/* cssをリセットする */
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html,  div, span, applet, object, iframe,
+h1 h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+/* cssはここから */
+
+/* cssの基本的な設定 */
+
+html{
+    font-size: 100%;   /* 16px */
+}
+
+
+body{
+    color: #24292e;
+    font-family: "Sawarabi Gothic";
+}
+
+
+a{
+    text-decoration: none;
+}
+
+p{
+    font-size: 1.3rem;   /* 16pxの1.3倍 */
+}
+
+
+img{
+    max-width: 100%;   /* スマホ画面の時も画像が小さくなる */
+}
+
+li{
+ font-size: 1.2rem;
+}
+
+
+.site-title{
+    line-height: 1px;
+    font-weight: 600;
+    font-size:  2rem;
+}
+
+
+.site-title a{
+    color: #24292e;
+    display: block;
+}
+
+.wrapper{
+    max-width: 960px;
+    margin: 0 auto 130px auto;
+    font-size: 0.9rem;
+    padding: 0 4%;
+}
+
+.sec-title{
+    font-size: 1.5rem;
+    text-align: center;
+    margin-bottom: 50px;
+    margin-top: 50px;
+}
+
+/* Headerの記載 */
+
+.header{
+ max-width: 960px;  
+ display: flex;
+ align-items: center;
+ justify-content: space-between;
+ margin: 0 auto;
+ padding: 0 4%;
+ height: 170px;
+}
+
+
+
+.header ul{
+    display: flex;
+    padding: 10px 0;
+}
+
+.header ul li{
+    font-size: 0.9rem;
+    margin-left: 30px;
+}
+
+.header ul li a{
+    color: #24292e;
+    transition: all 0.3s;
+}
+.header ul li a:hover{ 
+    opacity: 0.5;  /* 透明度を0.5倍にする */
+}
+
+
+
+
+/* Headerの記載  (sp用のレスポンシブ)*/
+@media screen and (max-width:800px){
+    .header{
+        flex-direction: column;
+        height: auto;
+        line-height: 40px;
+        margin-top: 50px;
+        margin-bottom: 20px;
+       
+    }
+
+    .site-title{
+     font-size: 1.6rem;
+    }
+
+    .header li{
+        font-size: 0.8rem;
+        margin-left: 20px;
+    }
+
+    .Twittericon{
+        width: 20px;
+        margin-top: 15px;
+      } 
+}
+
+/* mainの記載 */
+
+.main{
+    margin-bottom: 80px;
+}
+
+
+.main picture img{
+    width: 100%;
+    max-width: 1920px;
+    height: 400px;
+    object-fit: cover; /* 画像のトリミング */
+}
+
+
+/* aboutの記載 */
+#about ul{
+    margin-bottom: 30px;
+}
+
+#about ul li{
+    margin-bottom: 10px ;
+}
+
+#about ul li:first-child{
+    margin-bottom: 30px;
+}
+
+@media  screen and (max-width:800px){
+    #about ul{
+        margin-right: 5px;
+        margin-left: 5px;
+    }
+}
+
+
+/* worksの記載 ＊grid使ってもいいかも */
+
+#works ul{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 23px;
+    margin-bottom: 40px;
+}
+
+#works ul li{
+    width: 31%;
+    padding-bottom: 10px;
+}
+
+#works ul li img{
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#works ul li p{
+   text-align: center;
+   font-size: 0.9rem;
+   padding-bottom: 5px;
+   font-weight: 700;
+}
+
+#works ul li img:hover{
+    transform: scale(1.2,1.2) ;
+    opacity: 0.7;
+}
+
+@media  screen and (max-width:700px){
+    #works ul{
+        flex-direction: column;
+    }
+    #works ul li{
+        width:100%;
+    }
+    #works ul li{
+       margin-bottom: 20px;
+    }
+    #works ul li img:hover{
+        transform: none ;
+    }
+    #works ul li p{
+        font-size: 1.1rem;
+        padding-bottom: 10px;
+    }
+}
+
+
+/* newsの記載 ＊grid使ってもいいかも */
+  #news dl {
+    display: flex;
+  flex-wrap: wrap;
+    border-top: solid 1px #c8c8c8;
+    border-bottom: solid 1px #c8c8c8;
+    border-right: solid 1px #c8c8c8;
+    margin-bottom: 20px;
+  }
+  
+  #news dt {
+    width: 20%;
+    border-right: solid 1px #c8c8c8;
+    border-left: solid 1px #c8c8c8;
+    padding: 15px;
+  }
+  
+  #news dd {
+    width: 63%;
+
+    padding: 15px;
+  }
+
+
+
+  @media  screen and (max-width:700px){
+   #news dl{
+    flex-direction: column;
+    border: none;
+   }
+
+   #news dt{
+    width: 100%;
+    border: none;
+    padding-bottom: 0;
+   }
+
+   #news dd{
+    width: 100%;
+    padding-top: 0;
+   }
+}
+
+
+
+/* お問い合わせ */
+
+.wrapperform{
+    margin-bottom: 20px;
+}
+
+Form {
+    margin-top: 80px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 720px;
+  }
+ 
+  .Form-Item {
+    border-top: 1px solid #ddd;
+    padding-top: 24px;
+    padding-bottom: 24px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+  }
+  
+  
+  .Form-Item:nth-child(5) {
+    border-bottom: 1px solid #ddd;
+  }
+  .Form-Item-Label {
+    width: 100%;
+    max-width: 248px;
+    letter-spacing: 0.05em;
+    font-weight: bold;
+    font-size: 18px;
+  }
+  
+  .Form-Item-Label.isMsg {
+    margin-top: 8px;
+    margin-bottom: auto;
+  }
+  
+
+  .Form-Item-Label-Required {
+    border-radius: 6px;
+    margin-right: 8px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    width: 48px;
+    display: inline-block;
+    text-align: center;
+    background: #696ec0;
+    color: #fff;
+    font-size: 14px;
+  }
+  
+  .Form-Item-Input {
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    margin-left: 40px;
+    padding-left: 1em;
+    padding-right: 1em;
+    height: 48px;
+    flex: 1;
+    width: 100%;
+    max-width: 410px;
+    background: #eaedf2;
+    font-size: 18px;
+  }
+  
+  .Form-Item-Textarea {
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    margin-left: 40px;
+    padding-left: 1em;
+    padding-right: 1em;
+    height: 216px;
+    flex: 1;
+    width: 100%;
+    max-width: 410px;
+    background: #eaedf2;
+    font-size: 18px;
+  }
+  
+  .Form-Btn {
+    border-radius: 6px;
+    margin-top: 32px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    width: 280px;
+    display: block;
+    letter-spacing: 0.05em;
+    background: #696ec0;
+    color: #fff;
+    font-weight: bold;
+    font-size: 20px;
+  }
+
+
+  @media screen and (max-width: 480px) {
+    .Form {
+        margin-top: 40px;
+      }
+    .Form-Item {
+        padding-left: 14px;
+        padding-right: 14px;
+        padding-top: 16px;
+        padding-bottom: 16px;
+        flex-wrap: wrap;
+      }
+    .Form-Item-Label {
+        max-width: inherit;
+        display: flex;
+        align-items: center;
+        font-size: 15px;
+      }
+    .Form-Item-Textarea {
+      margin-top: 18px;
+      margin-left: 0;
+      height: 200px;
+      flex: inherit;
+      font-size: 15px;
+    }
+    .Form-Item-Input {
+        margin-left: 0;
+        margin-top: 18px;
+        height: 40px;
+        flex: inherit;
+        font-size: 15px;
+      }
+    .Form-Item-Label.isMsg {
+        margin-top: 0;
+      }
+    .Form-Item-Label-Required {
+        border-radius: 4px;
+        padding-top: 4px;
+        padding-bottom: 4px;
+        width: 32px;
+        font-size: 10px;
+      }
+    .Form-Btn {
+        margin-top: 24px;
+       padding-top: 8px;
+        padding-bottom: 8px;
+        width: 160px;
+        font-size: 16px;
+      }
+  }
+  
+  /* Footerの記載 */
+.footer{
+    max-width: 100%;
+    background-color: #c8c8c8;
+    height: 200px;
+}
+
+
+.footer ul {
+    margin-left: 2%;
+
+}
+
+.footer ul li a {
+    color: #fff;
+}
+
+.copyright{
+    text-align: center;
+    font-size: 0.5rem;
+}
+
+.footernav{
+    padding-top: 20px;
+}
