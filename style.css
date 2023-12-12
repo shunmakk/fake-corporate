@@ -176,17 +176,17 @@ li{
 /* mainの記載 */
 .main {
     margin-bottom: 80px;
-    overflow: hidden; /* 追加 */
+    overflow: hidden; 
 }
 
 .main picture {
-    margin: 0; /* 追加 */
-}
+    margin: 0;
+ }
 
 .main picture img {
     width: 100%;
-    height: auto; /* 追加 */
-    display: block; /* 追加 */
+    height: auto; 
+    display: block; 
 }
 
 
@@ -267,7 +267,7 @@ li{
 }
 
 
-/* newsの記載 ＊grid使ってもいいかも */
+/* newsの記載  */
   #news dl {
     display: flex;
   flex-wrap: wrap;
