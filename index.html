@@ -86,7 +86,7 @@
     <Form class="Form" id="contact-form">
         <div class="Form-Item">
           <p class="Form-Item-Label"><span class="Form-Item-Label-Required">必須</span>氏名</p>
-          <input type="text" id="name" name="user_name" class="Form-Item-Input" placeholder="例）山田太郎" >
+          <input type="text" id="name" name="user_name" class="Form-Item-Input" placeholder="例）山田太郎" required >
         </div>
         <div class="Form-Item">
           <p class="Form-Item-Label"><span class="Form-Item-Label-Required">任意</span>電話番号</p>
@@ -98,7 +98,7 @@
         </div>
         <div class="Form-Item">
           <p class="Form-Item-Label isMsg"><span class="Form-Item-Label-Required">必須</span>お問い合わせ内容</p>
-          <textarea name="message" id="about" class="Form-Item-Textarea"></textarea>
+          <textarea name="message" id="about" class="Form-Item-Textarea" required></textarea>
         </div>
         <button type="submit" class="Form-Btn" value="Send">送信する</button>
       </Form>
@@ -140,15 +140,7 @@
             });
         }
     </script>
-    <script>
-        //送信したらメールをリセットする
-        document.querySelector('#contact-form').addEventListener('submit', (e) => {
-    e.preventDefault();
-    e.target.elements.user_name.value = '';
-    e.target.elements.contact_number.value = '';
-    e.target.elements.user_email.value = '';
-    e.target.elements.message.value = '';
-  });
-      </script>
+
+    <script src="script.js"></script>
 
 </html>
