@@ -52,6 +52,7 @@ table {
 
 html{
     font-size: 100%;   /* 16px */
+    overflow: auto;
 }
 
 
@@ -80,98 +81,209 @@ li{
 }
 
 
-.site-title{
-    line-height: 1px;
-    font-weight: 600;
-    font-size:  2rem;
+/* .site-title{
+  line-height: 1px;
+  font-weight: 600;
+  font-size:  2rem;
 }
 
 
 .site-title a{
-    color: #24292e;
-    display: block;
-}
+  color: #24292e;
+  display: block;
+} */
 
 .wrapper{
-    max-width: 960px;
-    margin: 0 auto 130px auto;
-    font-size: 0.9rem;
-    padding: 0 4%;
+  max-width: 960px;
+  margin: 0 auto ;
+  font-size: 0.9rem;
+  padding: 0 4%;
 }
 
 .sec-title{
-    font-size: 1.5rem;
-    text-align: center;
-    margin-bottom: 50px;
-    margin-top: 50px;
+  font-size: 1.5rem;
+  text-align: center;
+  margin-bottom: 50px;
+  margin-top: 50px;
 }
 
-/* Headerの記載 */
+
+
+/* すべての画面幅で適用されるCSS  */
+
+.header {
+  width: 100%;
+  box-shadow: 0px 4px 4px -1px rgba(0,0,0,0.23);
+}
+.header__inner {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header__logo {
+  display: block;
+  font-size: 0;
+}
+
+
+.header__logo p {
+  width: 100%;
+  height: auto;
+}
+
+/* パソコンサイズ用のCSS  */
+@media screen and (min-width:768px) {
 
 .header{
- max-width: 960px;  
- display: flex;
- align-items: center;
- justify-content: space-between;
- margin: 0 auto;
- padding: 0 4%;
- height: 170px;
+  /* 横にはみ出さないようにする */
+  overflow: hidden;
 }
 
 
+  .header__inner {
+    padding: 20px;
+    
+  }
+  .header__logo {
+      width: 160px;
+      height: 19px;
+      transition: opacity .2s ease;
+      padding-left: 40px;
+  }
 
-.header ul{
-    display: flex;
-    padding: 10px 0;
+
+  .header__logo:hover {
+      opacity: .7;
+  }
+  .menu__list {
+      display: flex;
+  }
+  .menu__item:nth-child(n+2) {
+      margin-left: 20px;
+  }
+  .menu__link {
+      position: relative;
+      display: block;
+  }
+  .menu__link::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background-color: #F5675B;
+      transform: scaleX(0);
+      transform-origin: left center;
+      transition: transform .2s ease;
+  }
+  .menu__link:hover::after {
+      transform: scaleX(1);
+  }
+
+
+  .header__menu{
+   
+ margin-right: 50px;
+  }
+
+  .header__menu-btn {
+      display: none;
+  }
 }
 
-.header ul li{
-    font-size: 0.9rem;
-    margin-left: 30px;
+/* スマートフォン、タブレットサイズ用のCSS */
+@media screen and (max-width:767px) {
+  .container {
+      overflow: hidden;
+  }
+  .header {
+      position: fixed;
+      background: #fff;
+  }
+  .header__inner {
+      position: relative;
+      z-index: 10;
+  }
+  .header__logo {
+      width: 200px;
+      height: 15px;
+      margin-left: 10px;
+      margin-bottom: 15px;
+  }
+  .header__menu {
+    position: fixed;
+    z-index: 5;
+    top: 50px;
+    width: 100%;
+    height: calc(100vh - 50px);
+      background: #fff;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity .2s ease;
+  }
+  .header__inner.active .header__menu {
+      opacity: 1;
+      visibility: visible
+  }
+  .menu__list {
+      border-top: 1px solid #d7d7d7;
+  }
+  .menu__item {
+      border-bottom: 1px solid #d7d7d7;
+  }
+  .menu__link {
+      display: block;
+      padding: 13px 10px;
+      color: #F5675B;
+  }
+  .header__menu-btn {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: end;
+      width: 50px;
+      height: 50px;
+      padding: 5px;
+      cursor: pointer;
+      margin-right: 10px;
+  }
+  .header__menu-btn span:nth-child(-n+3) {
+      position: absolute;
+      display: block;
+      width: 30px;
+      height: 2px;
+      background: #F5675B;
+  }
+  .header__menu-btn span:nth-child(1) {
+      top: 10px;
+      transition: all .2s ease;
+  }
+  .header__inner.active .header__menu-btn span:nth-child(1) {
+      top: 20px;
+      transform: rotate(45deg);
+  }
+  .header__menu-btn span:nth-child(2) {
+      top: 18px;
+      transition: opacity .2s ease;
+  }
+  .header__inner.active .header__menu-btn span:nth-child(2) {
+      opacity: 0;
+  }
+  .header__menu-btn span:nth-child(3) {
+      top: 26px;
+      transition: all .2s ease;
+  }
+  .header__inner.active .header__menu-btn span:nth-child(3) {
+      top: 20px;
+      transform: rotate(-45deg);
+  }
+  .header__menu-btn span:nth-child(4) {
+      font-size: 10px;
+      color: #F5675B;
+  }
 }
-
-.header ul li a{
-    color: #24292e;
-    transition: all 0.3s;
-}
-.header ul li a:hover{ 
-    opacity: 0.5;  /* 透明度を0.5倍にする */
-}
-
-.icon{
-    width: 30px;
-}
-
-
-
-
-/* Headerの記載  (sp用のレスポンシブ)*/
-@media screen and (max-width:800px){
-    .header{
-        flex-direction: column;
-        height: auto;
-        line-height: 40px;
-        margin-top: 50px;
-        margin-bottom: 20px;
-       
-    }
-
-    .site-title{
-     font-size: 1.6rem;
-    }
-
-    .header li{
-        font-size: 0.8rem;
-        margin-left: 20px;
-    }
-
-    .Twittericon{
-        width: 20px;
-        margin-top: 15px;
-      } 
-}
-
-/* mainの記載 */
 
 /* mainの記載 */
 .main {
@@ -187,6 +299,12 @@ li{
     width: 100%;
     height: auto; 
     display: block; 
+}
+
+@media screen and (max-width:767px) {
+  .main picture{
+   margin-top: 100px;
+  }
 }
 
 
@@ -487,3 +605,16 @@ Form {
 .footernav{
     padding-top: 20px;
 }
+
+  /* 固定ヘッダー時アンカーリンクの位置を調整するためのCSS */
+
+  @media screen and (max-width:768px){
+    .contents {
+      padding-top: 40px;
+    }
+    
+    .contents_innner {
+        padding-top: 100px;
+        margin-top:-100px;
+    }
+  }

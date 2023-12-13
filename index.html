@@ -11,21 +11,27 @@
 </head>
 <body>
  <!-- header -->
-<header class="header"> 
-    <h1 class="site-title">
-        <a href="#">株式会社Wcode</a>
-    </h1>
-    <nav>
-      <ul>
-       <li><a href="#about">About</a></li>
-       <li><a href="#works">Works</a></li>
-       <li><a href="#news">News</a></li>
-       <li><a href="#contact">Contact</a></li>
-       <li><a href="https://www.twitter.com/" target="_blank" rel="noopener noreferrer">
-        <img src="./img/twitter.png" alt="instagram" class="icon">
-      </a></li>
-      </ul>
-    </nav>
+ <header class="header">
+    <div class="header__inner" id="headerInner">
+        <a class="header__logo" href="">
+           <p>株式会社Wcode</p>
+        </a>
+ 
+        <div class="header__menu">
+            <ul class="menu__list">
+                <li class="menu__item"><a class="menu__link" href="#about" id="sp">About</a></li>
+                <li class="menu__item"><a class="menu__link" href="#works" id="sp">Works</a></li>
+                <li class="menu__item"><a class="menu__link" href="#news" id="sp">News</a></li>
+                <li class="menu__item"><a class="menu__link" href="#contact" id="sp">Contact</a></li>
+            </ul>
+        </div>
+        <div class="header__menu-btn" id="spMenuBtn">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span>MENU</span>
+        </div>
+    </div>
 </header>
 
 
@@ -37,7 +43,8 @@
     </picture>
 
  <!-- about -->
- <section id="about" class="wrapper">
+ <div id="about" class="contents_inner">
+ <section  class="wrapper contents">
     <h2 class="sec-title">About</h2>
     <ul>
         <li class="wcodename">株式会社Wcode</li>
@@ -46,9 +53,11 @@
     </ul>
     <p>主に簡単なLPサイトやコーポレートサイトの制作を承っています。また、ReactやPHPを使用したwebアプリケーションの開発も得意としています。</p>
  </section>
+</div>
 
 <!-- works -->
-<section id="works" class="wrapper">
+<div id="works" class="contents_inner">
+<section  class="wrapper contents">
     <h2 class="sec-title">Works</h2>
     <ul>
        
@@ -60,10 +69,11 @@
         <li> <p>webアプリケーションの構築</p><img src="img/works6.jpg" alt="works6"/></li>
     </ul>
 </section>
-
+</div>
 
 <!-- news -->
-<section id="news" class="wrapper">
+<div id="news" class="contents_inner">
+<section  class="wrapper contents">
     <h2 class="sec-title">News</h2>
     <dl>
 
@@ -79,9 +89,10 @@
     <dd>会社休業のお知らせ</dd>
     </dl>
 </section>
-
+</div>
 <!-- form -->
-<section id="contact" class="wrapper wrapperform">
+<div id="contact" class="contents_inner">
+<section  class="wrapper wrapperform contents">
     <h2 class="sec-title">Contact</h2>
     <Form class="Form" id="contact-form">
         <div class="Form-Item">
@@ -103,6 +114,9 @@
         <button type="submit" class="Form-Btn" value="Send">送信する</button>
       </Form>
 </section>
+</div>
+
+</div>
 </div>
 
 <!-- footer -->
@@ -142,5 +156,49 @@
     </script>
 
     <script src="script.js"></script>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> 
+  <script>
+
+// ①ハンバーガーボタンクリックで実行
+  
+// スマホ・タブレットサイズ時のみ表示されるメニューの開閉ボタンを変数に格納。
+const spMenuBtn = $("#spMenuBtn");
+
+// メニューや開閉ボタンをラップしている要素を変数に格納。
+const headerInner = $("#headerInner");
+// 開閉ボタンをクリックすると発火。
+spMenuBtn.click(function() {
+  // ラップ要素にactiveというクラスを付与する。
+  headerInner.toggleClass("active");
+});
+
+
+ // ② メニューのリンクがクリックされたときの処理
+$(document).ready(function() {
+    $(".menu__link").on("click", function(e) {
+      e.preventDefault(); // リンクのデフォルトの挙動を無効にする
+
+      // 対象のセクションのIDを取得
+      var targetId = $(this).attr("href");
+      // 対象のセクションの位置を取得
+      var targetPosition = $(targetId).offset().top;
+
+      // メニューを閉じる
+      $("#headerInner").removeClass("active");
+
+      // アニメーションでスクロール
+      $("html, body").animate(
+        {
+          scrollTop: targetPosition
+        },
+        600 // スクロールの速さを調整する場合は適宜変更
+        );
+     
+    });
+    });
+
+
+</script>   
 
 </html>

@@ -7,3 +7,6 @@
     e.target.elements.user_email.value = '';
     e.target.elements.message.value = '';
   });
+
+
+  
