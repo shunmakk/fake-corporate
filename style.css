@@ -109,7 +109,7 @@ li{
 
 
 
-/* すべての画面幅で適用されるCSS  */
+/* Headerのcss  */
 
 .header {
   width: 100%;
@@ -132,7 +132,7 @@ li{
   height: auto;
 }
 
-/* パソコンサイズ用のCSS  */
+/* Headerのパソコンサイズ用のCSS  */
 @media screen and (min-width:768px) {
 
 .header{
@@ -150,6 +150,7 @@ li{
       height: 19px;
       transition: opacity .2s ease;
       padding-left: 40px;
+  
   }
 
 
@@ -200,7 +201,7 @@ li{
   }
   .header {
       position: fixed;
-      background: #fff;
+      background: rgb(255, 255, 255);
   }
   .header__inner {
       position: relative;
@@ -304,6 +305,10 @@ li{
 @media screen and (max-width:767px) {
   .main picture{
    margin-top: 100px;
+  }
+
+  main{
+    margin-top: 300px;
   }
 }
 
