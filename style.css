@@ -135,7 +135,7 @@ li{
 
 
   .header__inner {
-    padding: 20px;
+   padding: 20px;
     
   }
   .header__logo {
@@ -143,22 +143,39 @@ li{
       height: 19px;
       transition: opacity .2s ease;
       padding-left: 40px;
+      padding-bottom: 10px;
   
   }
-
 
   .header__logo:hover {
       opacity: .7;
   }
+
+   /* メニューリストのcssを割り当てる */
   .menu__list {
       display: flex;
+      margin-right: 10px;
   }
+
+  .menu__item{
+    padding-left: 10px;
+    border-left: solid 1px;
+  }
+
+  .menu__item:nth-of-type(4){
+    border-right: solid 1px;
+    padding-right: 10px;
+  }
+
+
+
   .menu__item:nth-child(n+2) {
       margin-left: 20px;
   }
   .menu__link {
       position: relative;
       display: block;
+      color: #696ec0;
   }
   .menu__link::after {
       content: '';
@@ -169,8 +186,8 @@ li{
       height: 2px;
       background-color: #F5675B;
       transform: scaleX(0);
-      transform-origin: left center;
-      transition: transform .2s ease;
+      transform-origin: right center;
+      transition: transform .4s ease;
   }
   .menu__link:hover::after {
       transform: scaleX(1);
