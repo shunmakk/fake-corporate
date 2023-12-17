@@ -46,6 +46,8 @@ table {
 }
 
 
+
+
 /* cssはここから */
 
 /* cssの基本的な設定 */
@@ -57,7 +59,7 @@ html{
 
 
 body{
-    color: #24292e;
+    color: #282e35;
     font-family: "Sawarabi Gothic";
 }
 
@@ -65,6 +67,7 @@ body{
 
 a{
     text-decoration: none;
+    color: black;
 }
 
 p{
