@@ -84,17 +84,6 @@ li{
 }
 
 
-/* .site-title{
-  line-height: 1px;
-  font-weight: 600;
-  font-size:  2rem;
-}
-
-
-.site-title a{
-  color: #24292e;
-  display: block;
-} */
 
 .wrapper{
   max-width: 960px;
@@ -118,6 +107,7 @@ li{
   width: 100%;
   box-shadow: 0px 4px 4px -1px rgba(0,0,0,0.23);
 }
+
 .header__inner {
   width: 100%;
   display: flex;
@@ -216,6 +206,11 @@ li{
       margin-left: 10px;
       margin-bottom: 15px;
   }
+   .header__logo p {
+    font-weight: 800;
+    margin-left: 10px;
+   }
+
   .header__menu {
     position: fixed;
     z-index: 5;
