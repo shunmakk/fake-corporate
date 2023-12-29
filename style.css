@@ -451,6 +451,39 @@ li{
 
 
 
+
+/* information */
+
+.box{
+  max-width: 500px;
+  width: 100%;
+  margin: 20px auto;
+  padding: 20px;
+  background: #9b9191;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 0px 0px 19px 1px  #777777;
+}
+
+.box p {
+  color: #fff;
+  letter-spacing: 0.5px;
+}
+
+.count-size{
+  font-weight: bold;
+  color: #252C8C;
+  font-size: 1.5rem;
+}
+
+@media screen and (max-width:480px){
+  .box{
+   max-width: 300px;
+   width: 250px
+  }
+}
+
+
 /* お問い合わせ */
 
 .wrapperform{
