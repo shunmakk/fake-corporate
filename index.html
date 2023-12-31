@@ -100,8 +100,22 @@
       <p>お客様満足度<span class="count-up count-size" >97</span>%!</p>
       </div>
 
+      <div id="box2"  class="box" >
+        <p>有休消化率<span class="count-up1 count-size" >94</span>%!</p>
+      </div>
+
+      <div id="box3"  class="box" >
+        <p>平均年収:<span class="count-up2 count-size" >443</span>万円</p>
+      </div>
 
     </section>
+</div>
+
+<div class="chartbox">
+<h3>職種別比率</h3>
+<div class="chart-area">
+    <canvas id="chart01"></canvas>
+</div>
 </div>
 
 
@@ -148,6 +162,10 @@
      <p class="copyright">© 2023 Wcode Corporation.</p>
 </footer>
 </body>
+
+
+
+<!--E-mail.jsの処理-->
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <script type="text/javascript">//e-mail.jsの追加
         (function() {
@@ -171,73 +189,15 @@
         }
     </script>
 
+
+
+  <!--通常のjsの処理-->
     <script src="script.js"></script>
 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <!--jQuery-->
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/protonet-jquery.inview/1.1.2/jquery.inview.min.js"></script>
-<!--自作のJS-->
-  <script>
-
-// ①ハンバーガーボタンクリックで実行
-  
-// スマホ・タブレットサイズ時のみ表示されるメニューの開閉ボタンを変数に格納。
-const spMenuBtn = $("#spMenuBtn");
-
-// メニューや開閉ボタンをラップしている要素を変数に格納。
-const headerInner = $("#headerInner");
-// 開閉ボタンをクリックすると発火。
-spMenuBtn.click(function() {
-  // ラップ要素にactiveというクラスを付与する。
-  headerInner.toggleClass("active");
-});
-
-
- // ② メニューのリンクがクリックされたときの処理
-$(document).ready(function() {
-    $(".menu__link").on("click", function(e) {
-      e.preventDefault(); // リンクのデフォルトの挙動を無効にする
-
-      // 対象のセクションのIDを取得
-      var targetId = $(this).attr("href");
-      // 対象のセクションの位置を取得
-      var targetPosition = $(targetId).offset().top;
-
-      // メニューを閉じる
-      $("#headerInner").removeClass("active");
-
-      // アニメーションでスクロール
-      $("html, body").animate(
-        {
-          scrollTop: targetPosition
-        },
-        600 // スクロールの速さを調整する場合は適宜変更
-        );
-     
-    });
-    });
-
-
-    //informationの部分のjs
-    $('#box1').on('inview', function(event, isInView) {
-	if (isInView) {
-		//要素が見えたときに実行する処理
-		$("#box1 .count-up").each(function(){
-			$(this).prop('Counter',0).animate({//0からカウントアップ
-		        Counter: $(this).text()
-		    }, {
-				// スピードやアニメーションの設定
-		        duration: 1500,
-		        easing: 'swing',
-		        step: function (now) {
-		            $(this).text(Math.ceil(now));
-		        }
-		    });
-		});
-	}
-});
-
-
-
-</script>   
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
+  <script src="index.js"></script>   
 
 </html>
